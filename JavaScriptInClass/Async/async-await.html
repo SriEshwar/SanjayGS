@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function checkNumbers() {
+    try {
+        await new Promise((resolve, reject) => {
+            setTimeout(() => {
+                let number = 8;
+                let numbers = 90;
+                if (numbers == number) {
+                    resolve("True");
+                } else {
+                    reject("False");
+                }
+            }, 2000);
+        });
+
+
+        console.log("True");
+    } catch (error) {
+        console.log("False");
+    }
+
+}
+ 
+
+
+
+checkNumbers()
+    </script>
+</body>
+</html>

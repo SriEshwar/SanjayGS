@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    <script>
+        let promises = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                let number=8;
+            let numbers=90;
+            if(numbers==number){
+                resolve("True");
+            }else{
+                reject("false");
+            }
+        },2000)
+    })
+        .then(()=>{
+            console.log("True");
+        }).catch(()=>{
+            console.log("False");
+        })
+    </script>
+</body>
+</html>

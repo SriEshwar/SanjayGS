@@ -1,0 +1,126 @@
+
+
+
+
+<!-- -------------------------------------------------------------------------------------------------------------- -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up / Log In</title>
+<style>
+    
+    form {
+        max-width: 250px;
+        margin: 0 auto;
+        color: #2d0a97;
+        background-color: aqua;
+       
+    }
+    input {
+        margin-bottom: 10px;
+        border-color: aqua;
+        color: black;
+
+
+    }
+</style>
+</head>
+<body>
+
+<div id="container">
+    <form id="loginForm">
+        <h2>Log In</h2>
+        <input type="email" id="loginEmail" placeholder="Email" required><br>
+        <input type="password" id="loginPassword" placeholder="Password" required><br>
+        <button type="submit">Log In</button>
+        <p id="signupLink" style="color: blue; text-decoration: underline; cursor: pointer;">Don't have an account? Sign up</p>
+
+    </form>
+    
+    <form id="signupForm">
+        <h2>Sign Up</h2>
+        <input type="email" id="signupEmail" placeholder="Email" required><br>
+        <input type="password" id="signupPassword" placeholder="Password" required><br>
+        <button type="submit">Sign Up</button>
+        <p id="loginLink" style="color: blue; text-decoration: underline; cursor: pointer;">Already have an account? Log In</p>
+
+    </form>
+</div>
+
+<script>
+    document.getElementById("signupForm").style.display = "none";
+
+    document.getElementById("signupLink").addEventListener("click", function() {
+        document.getElementById("loginForm").style.display = "none";
+        document.getElementById("signupForm").style.display = "block";
+    });
+
+    document.getElementById("loginLink").addEventListener("click", function() {
+        document.getElementById("signupForm").style.display = "none";
+        document.getElementById("loginForm").style.display = "block";
+    });
+
+    document.getElementById("signupForm").addEventListener("submit", async function(event) {
+        event.preventDefault();
+        try {
+            await signUp();
+            alert("Sign Up successful!");
+            window.location.href = "dashboard.html"; // Redirect to dashboard after sign up
+        } catch (error) {
+            alert("Error signing up: " + error.message);
+        }
+    });
+
+    document.getElementById("loginForm").addEventListener("submit", async function(event) {
+        event.preventDefault();
+        try {
+            await logIn();
+            alert("Log In successful!");
+            window.location.href = "dashboard.html"; // Redirect to dashboard after log in
+        } catch (error) {
+            alert("Error logging in: " + error.message);
+        }
+    });
+
+    function signUp() {
+        return new Promise((resolve, reject) => {
+            
+            setTimeout(() => {
+                
+                const email = document.getElementById("signupEmail").value;
+                const password = document.getElementById("signupPassword").value;
+                if (!email || !password) {
+                    reject(new Error("Email and password are required."));
+                } else {
+                   
+                    localStorage.setItem("email", email);
+                    localStorage.setItem("password", password);
+                    resolve();
+                }
+            }, 1000);
+        });
+    }
+
+    function logIn() {
+        return new Promise((resolve, reject) => {
+           
+            setTimeout(() => {
+               
+                const storedEmail = localStorage.getItem("email");
+                const storedPassword = localStorage.getItem("password");
+                const email = document.getElementById("loginEmail").value;
+                const password = document.getElementById("loginPassword").value;
+                if (email === storedEmail && password === storedPassword) {
+                    resolve();
+                } else {
+                    reject(new Error("Incorrect email or password."));
+                }
+            }, 1000);
+        });
+    }
+</script>
+
+</body>
+</html>

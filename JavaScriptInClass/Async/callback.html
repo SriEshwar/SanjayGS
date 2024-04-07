@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Example 2: Defining a function that accepts a callback
+
+// Function that performs an operation and then executes a callback function
+// function performOperation(call) {
+//     // Perform some operation (in this case, a simple console log)
+//     console.log("Operation performed.");
+//     setTimeout(()=>{
+//         console.log("Hi how are u");
+//     },2000)
+//     // Execute the callback function
+//     call();
+// }
+
+// // Define a callback function to be passed to performOperation
+// function callbackFunction() {
+//     //console.log("Callback function executed.");
+//     setTimeout(()=>{
+//         console.log("Callback function executed.");
+//     },5000);
+
+// }
+
+// // Call performOperation and pass the callbackFunction as an argument
+// performOperation(callbackFunction);
+
+
+    //----------------------------------------------------------------------------------------
+    
+// Example of callback hell
+
+function step1(callback) {
+    console.log("Step 1: Performing operation...");
+    setTimeout(function() {
+        console.log("Step 1 completed.");
+        callback();
+    }, 1000);
+}
+
+function step2(callback) {
+    console.log("Step 2: Performing operation...");
+    setTimeout(function() {
+        console.log("Step 2 completed.");
+        callback();
+    }, 1000);
+}
+
+function step3(callback) {
+    console.log("Step 3: Performing operation...");
+    setTimeout(function() {
+        console.log("Step 3 completed.");
+        callback();
+    }, 1000);
+}
+
+function step4(callback) {
+    console.log("Step 4: Performing operation...");
+    setTimeout(function() {
+        console.log("Step 4 completed.");
+        callback();
+    }, 1000);
+}
+
+// Nested callbacks for sequential execution of steps
+step1(function() {
+    console.log("Hi");
+    step2(function() {
+        step3(function() {
+            step4(function() {
+                console.log("All steps completed.");
+            });
+        });
+    });
+});
+
+
+    </script>
+</body>
+</html>

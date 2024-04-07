@@ -1,0 +1,105 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            background-image: url('img1.jpeg'); /* Replace 'background-image.jpg' with the path to your image */
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the background image */
+            
+        }
+        h1 {
+           color: aliceblue;
+           text-align: center;
+        }
+        p {
+            color: aliceblue;
+            text-align: center;
+        }
+        .form{
+            max-width: 400px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+    }
+    /* Style for form input fields */
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: none;
+      border-radius: 5px;
+      box-sizing: border-box;
+      background-color: aqua;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+        }
+        table {
+            margin-top: 20px;
+            width: 50%;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            color: whitesmoke;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: red;
+        }
+    </style>
+    
+</head>
+<body>
+   
+    <h1>Welcome to Login Page</h1>
+    <p>User can login first and then move further</p>
+    <form>
+        <div class="form">
+        <label for="username">Username:</label>
+       <input type="text" id="username" name="username" required>
+        
+        <br><br><label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <br><br><label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        
+        <br><br><input type="submit" value="Submit">
+        </div>
+      </form>
+      <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Sanjay</td>
+                <td>san@example.com</td>
+                <td>User</td>
+            </tr>
+          
+           
+        </tbody>
+    </table>
+</body>
+</html>
