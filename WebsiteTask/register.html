@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  .container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  h2 {
+    text-align: center;
+  }
+  input[type="text"],
+  input[type="password"],
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+  }
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  .error {
+    color: red;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Register</h2>
+  <form id="registerForm">
+    <label for="newEmail">Email:</label>
+    <input type="text" id="newEmail" name="newEmail" placeholder="Your email..">
+
+    <label for="newPassword">Password:</label>
+    <input type="password" id="newPassword" name="newPassword" required="True" placeholder="Your password..">
+
+    <input type="submit" value="Register">
+
+    <div class="error" id="registrationError"></div>
+  </form>
+
+  <div class="create-account">
+    <p>Already have an account? <a href="login.html">Login</a>.</p>
+  </div>
+</div>
+
+<script>
+    document.getElementById("registerForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      var newEmail = document.getElementById("newEmail").value;
+      var newPassword = document.getElementById("newPassword").value;
+  
+      // Check if email already exists in localStorage
+      if (localStorage.getItem("email") === newEmail) {
+        document.getElementById("registrationError").innerText = "Email already exists.";
+        return;
+      } else {
+        // Store new credentials in localStorage
+        localStorage.setItem("email", newEmail);
+        localStorage.setItem("password", newPassword);
+  
+        // Show success message and redirect
+        alert("Registration successful! You can now login.");
+        window.location.href = "profile.html";
+      }
+    });
+  </script>
+  
+
+</body>
+</html>
