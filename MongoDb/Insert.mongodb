@@ -1,0 +1,96 @@
+Please enter a MongoDB connection string (Default: mongodb://loctest> db.Photos.insertOne({"id": 2,"title":"reprehenderit est deserunt velit ipsam","url":"https://via.placeholder.com/600/771796","likes":7,"dislikes":4})
+{
+  acknowledged: true,
+  insertedId: ObjectId('66319f5a55f69a590a46b79b')
+}
+test> db.Photos.find()
+[
+  { _id: ObjectId('66319d7c55f69a590a46b799'), id: 1 },
+  {
+    _id: ObjectId('66319e2b55f69a590a46b79a'),
+    id: 1,
+    title: 'accusamus beatae ad facilis cum similique qui sunt',
+    url: 'https//via.placeholder.com/600/92c952',
+    likes: 8,
+    dislikes: 3
+  },
+  {
+    _id: ObjectId('66319f5a55f69a590a46b79b'),
+    id: 2,
+    title: 'reprehenderit est deserunt velit ipsam',
+    url: 'https://via.placeholder.com/600/771796',
+    likes: 7,
+    dislikes: 4
+  }
+]
+test> db.Photos.insertOne({"id": 3,"title":"officia porro iure quia iusto qui ipsa ut modi","url":"https://via.placeholder.com/600/24f355","likes":5,"dislikes":8})
+{
+  acknowledged: true,
+  insertedId: ObjectId('66319feb55f69a590a46b79c')
+}
+test> db.Photos.insertOne({"id": 4,"title":"culpa odia esse rerum omnis laboriosam voluptate repudiandae","url":"https://via.placeholder.com/600/d32776","likes":3,"dislikes":6})
+{
+  acknowledged: true,
+  insertedId: ObjectId('6631a04855f69a590a46b79d')
+}
+test> db.Photos.insertOne({"id": 5,"title":"natus nisi omnis corporis facere molestiae rerum in","url":"https://via.placeholder.com/600/f66b97","likes":2,"dislikes":5})
+{
+  acknowledged: true,
+  insertedId: ObjectId('6631a0fc55f69a590a46b79e')
+}
+test> db.Photos.insertOne({"id": 6,"title":"accusamus ea aliquid et amet sequi nemo","url":"https://via.placeholder.com/600/56a8c2","likes":9,"dislikes":4})
+{
+  acknowledged: true,
+  insertedId: ObjectId('6631a16155f69a590a46b79f')
+}
+test> db.Photos.find()
+[
+  { _id: ObjectId('66319d7c55f69a590a46b799'), id: 1 },
+  {
+    _id: ObjectId('66319e2b55f69a590a46b79a'),
+    id: 1,
+    title: 'accusamus beatae ad facilis cum similique qui sunt',
+    url: 'https//via.placeholder.com/600/92c952',
+    likes: 8,
+    dislikes: 3
+  },
+  {
+    _id: ObjectId('66319f5a55f69a590a46b79b'),
+    id: 2,
+    title: 'reprehenderit est deserunt velit ipsam',
+    url: 'https://via.placeholder.com/600/771796',
+    likes: 7,
+    dislikes: 4
+  },
+  {
+    _id: ObjectId('66319feb55f69a590a46b79c'),
+    id: 3,
+    title: 'officia porro iure quia iusto qui ipsa ut modi',
+    url: 'https://via.placeholder.com/600/24f355',
+    likes: 5,
+    dislikes: 8
+  },
+  {
+    _id: ObjectId('6631a04855f69a590a46b79d'),
+    id: 4,
+    title: 'culpa odia esse rerum omnis laboriosam voluptate repudiandae',
+    url: 'https://via.placeholder.com/600/d32776',
+    likes: 3,
+    dislikes: 6
+  },
+  {
+    _id: ObjectId('6631a0fc55f69a590a46b79e'),
+    id: 5,
+    title: 'natus nisi omnis corporis facere molestiae rerum in',
+    url: 'https://via.placeholder.com/600/f66b97',
+    likes: 2,
+    dislikes: 5
+  },
+  {
+    _id: ObjectId('6631a16155f69a590a46b79f'),
+    id: 6,
+    title: 'accusamus ea aliquid et amet sequi nemo',
+    url: 'https://via.placeholder.com/600/56a8c2',
+    likes: 9,
+    dislikes: 4
+  }
