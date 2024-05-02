@@ -120,14 +120,14 @@
                 return false; // Prevent form submission
             }
 
-            // Password validation (strong password: uppercase, lowercase, number, special character, minimum length of 8 characters)
+          
             var strongPasswordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
             if (!strongPasswordPattern.test(password)) {
                 alert("Password must contain at least one uppercase letter, one lowercase letter, one number, one special character, and be at least 8 characters long");
-                return false; // Prevent form submission
+                return false; 
             }
 
-            return true; // Allow form submission
+            return true; 
         }
     </script>
 </body>
