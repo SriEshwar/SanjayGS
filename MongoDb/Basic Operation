@@ -1,0 +1,351 @@
+test> show dbs
+1234          56.00 KiB
+admin         40.00 KiB
+college      152.00 KiB
+config       108.00 KiB
+dbname         8.00 KiB
+emp           72.00 KiB
+emp_details   80.00 KiB
+local         88.00 KiB
+miniprj       24.00 KiB
+mydatabase   208.00 KiB
+nodedb        80.00 KiB
+sample       280.00 KiB
+test         296.00 KiB
+test> db.items.find()
+[
+  {
+    _id: ObjectId('663344c5709936696a46b79a'),
+    id: 59,
+    title: 'Spring and summershoes',
+    price: 20,
+    quantity: 3,
+    total: 60,
+    discountPercentage: 8.71,
+    discountPrice: 55,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/59/thumbnail.jpg'
+  },
+  {
+    _id: ObjectId('66334501709936696a46b79b'),
+    id: 88,
+    title: 'Tc reusable silicone magic washing gloves',
+    price: 29,
+    quantity: 2,
+    total: 58,
+    discountPercentage: 3.19,
+    discountPrice: 56,
+    thumbnail: 'https://cdn.dummyjson.com/product-images/88/thumbnail.jpg'
+  },
+  {
+    _id: ObjectId('66334522709936696a46b79c'),
+    id: 18,
+    title: 'Oil free moisturizer 100ml',
+    price: 40,
+    quantity: 2,
+    total: 80,
+    discountPercentage: 13.1,
+    discountPrice: 70,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/18/thumbnail.jpg'
+  },
+  {
+    _id: ObjectId('66334557709936696a46b79d'),
+    id: 95,
+    title: 'Wholesale cargo lashing belt',
+    price: 930,
+    quantity: 1,
+    total: 930,
+    discountPercentage: 17.67,
+    discountPrice: 766,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/95/thumbnail.jpg'
+  },
+  {
+    _id: ObjectId('66334570709936696a46b79e'),
+    id: 39,
+    title: 'Women sweaters wool',
+    price: 600,
+    quantity: 2,
+    total: 1200,
+    discountPercentage: 17.2,
+    discountPrice: 994,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/39/thumbnail.jpg'
+  }
+]
+test> db.items.find({discountPrice:{$gt:500}})
+[
+  {
+    _id: ObjectId('66334557709936696a46b79d'),
+    id: 95,
+    title: 'Wholesale cargo lashing belt',
+    price: 930,
+    quantity: 1,
+    total: 930,
+    discountPercentage: 17.67,
+    discountPrice: 766,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/95/thumbnail.jpg'
+  },
+  {
+    _id: ObjectId('66334570709936696a46b79e'),
+    id: 39,
+    title: 'Women sweaters wool',
+    price: 600,
+    quantity: 2,
+    total: 1200,
+    discountPercentage: 17.2,
+    discountPrice: 994,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/39/thumbnail.jpg'
+  }
+]
+test> db.items.find({discountPrice:{$lt:500}})
+[
+  {
+    _id: ObjectId('663344c5709936696a46b79a'),
+    id: 59,
+    title: 'Spring and summershoes',
+    price: 20,
+    quantity: 3,
+    total: 60,
+    discountPercentage: 8.71,
+    discountPrice: 55,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/59/thumbnail.jpg'
+  },
+  {
+    _id: ObjectId('66334501709936696a46b79b'),
+    id: 88,
+    title: 'Tc reusable silicone magic washing gloves',
+    price: 29,
+    quantity: 2,
+    total: 58,
+    discountPercentage: 3.19,
+    discountPrice: 56,
+    thumbnail: 'https://cdn.dummyjson.com/product-images/88/thumbnail.jpg'
+  },
+  {
+    _id: ObjectId('66334522709936696a46b79c'),
+    id: 18,
+    title: 'Oil free moisturizer 100ml',
+    price: 40,
+    quantity: 2,
+    total: 80,
+    discountPercentage: 13.1,
+    discountPrice: 70,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/18/thumbnail.jpg'
+  }
+]
+test> db.items.find({discountPrice:{$lte:500}})
+[
+  {
+    _id: ObjectId('663344c5709936696a46b79a'),
+    id: 59,
+    title: 'Spring and summershoes',
+    price: 20,
+    quantity: 3,
+    total: 60,
+    discountPercentage: 8.71,
+    discountPrice: 55,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/59/thumbnail.jpg'
+  },
+  {
+    _id: ObjectId('66334501709936696a46b79b'),
+    id: 88,
+    title: 'Tc reusable silicone magic washing gloves',
+    price: 29,
+    quantity: 2,
+    total: 58,
+    discountPercentage: 3.19,
+    discountPrice: 56,
+    thumbnail: 'https://cdn.dummyjson.com/product-images/88/thumbnail.jpg'
+  },
+  {
+    _id: ObjectId('66334522709936696a46b79c'),
+    id: 18,
+    title: 'Oil free moisturizer 100ml',
+    price: 40,
+    quantity: 2,
+    total: 80,
+    discountPercentage: 13.1,
+    discountPrice: 70,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/18/thumbnail.jpg'
+  }
+]
+test> db.items.find({discountPrice:{$gte:500}})
+[
+  {
+    _id: ObjectId('66334557709936696a46b79d'),
+    id: 95,
+    title: 'Wholesale cargo lashing belt',
+    price: 930,
+    quantity: 1,
+    total: 930,
+    discountPercentage: 17.67,
+    discountPrice: 766,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/95/thumbnail.jpg'
+  },
+  {
+    _id: ObjectId('66334570709936696a46b79e'),
+    id: 39,
+    title: 'Women sweaters wool',
+    price: 600,
+    quantity: 2,
+    total: 1200,
+    discountPercentage: 17.2,
+    discountPrice: 994,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/39/thumbnail.jpg'
+  }
+]
+test> db.items.count()
+DeprecationWarning: Collection.count() is deprecated. Use countDocuments or estimatedDocumentCount.
+5
+test> db.items.find({price:{lt:300,gt:600}})
+
+test> db.items.find({price:{lt:700}})
+
+test> db.items.find({"price":{lt:700}})
+
+test> db.items.find({price:{$lt:300,$gt:600}})
+
+test> db.items.find({price:{$lt:300}})
+[
+  {
+    _id: ObjectId('663344c5709936696a46b79a'),
+    id: 59,
+    title: 'Spring and summershoes',
+    price: 20,
+    quantity: 3,
+    total: 60,
+    discountPercentage: 8.71,
+    discountPrice: 55,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/59/thumbnail.jpg'
+  },
+  {
+    _id: ObjectId('66334501709936696a46b79b'),
+    id: 88,
+    title: 'Tc reusable silicone magic washing gloves',
+    price: 29,
+    quantity: 2,
+    total: 58,
+    discountPercentage: 3.19,
+    discountPrice: 56,
+    thumbnail: 'https://cdn.dummyjson.com/product-images/88/thumbnail.jpg'
+  },
+  {
+    _id: ObjectId('66334522709936696a46b79c'),
+    id: 18,
+    title: 'Oil free moisturizer 100ml',
+    price: 40,
+    quantity: 2,
+    total: 80,
+    discountPercentage: 13.1,
+    discountPrice: 70,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/18/thumbnail.jpg'
+  }
+]
+test> db.items.update({price:29},{$set{quantity:3}})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:32)
+
+> 1 | db.items.update({price:29},{$set{quantity:3}})
+    |                                 ^
+  2 |
+
+test> db.items.update({price:29},{$set:{quantity:3}})
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+test> db.items.updateOne({price:29},{$set:{quantity:3}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+test> db.items.find()
+[
+  {
+    _id: ObjectId('663344c5709936696a46b79a'),
+    id: 59,
+    title: 'Spring and summershoes',
+    price: 20,
+    quantity: 3,
+    total: 60,
+    discountPercentage: 8.71,
+    discountPrice: 55,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/59/thumbnail.jpg'
+  },
+  {
+    _id: ObjectId('66334501709936696a46b79b'),
+    id: 88,
+    title: 'Tc reusable silicone magic washing gloves',
+    price: 29,
+    quantity: 3,
+    total: 58,
+    discountPercentage: 3.19,
+    discountPrice: 56,
+    thumbnail: 'https://cdn.dummyjson.com/product-images/88/thumbnail.jpg'
+  },
+  {
+    _id: ObjectId('66334522709936696a46b79c'),
+    id: 18,
+    title: 'Oil free moisturizer 100ml',
+    price: 40,
+    quantity: 2,
+    total: 80,
+    discountPercentage: 13.1,
+    discountPrice: 70,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/18/thumbnail.jpg'
+  },
+  {
+    _id: ObjectId('66334557709936696a46b79d'),
+    id: 95,
+    title: 'Wholesale cargo lashing belt',
+    price: 930,
+    quantity: 1,
+    total: 930,
+    discountPercentage: 17.67,
+    discountPrice: 766,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/95/thumbnail.jpg'
+  },
+  {
+    _id: ObjectId('66334570709936696a46b79e'),
+    id: 39,
+    title: 'Women sweaters wool',
+    price: 600,
+    quantity: 2,
+    total: 1200,
+    discountPercentage: 17.2,
+    discountPrice: 994,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/39/thumbnail.jpg'
+  }
+]
+test> db.items.updateOne({price:20},{$set:{quantity:3}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+test> db.items.updateOne({$or:{id:39,total:1200}})
+MongoInvalidArgumentError: Update document requires atomic operators
+test> db.items.find({$or:{id:39,total:1200}})
+MongoServerError[BadValue]: $or must be an array
+test> db.items.find({$or:[{id:39,total:1200}]})
+[
+  {
+    _id: ObjectId('66334570709936696a46b79e'),
+    id: 39,
+    title: 'Women sweaters wool',
+    price: 600,
+    quantity: 2,
+    total: 1200,
+    discountPercentage: 17.2,
+    discountPrice: 994,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/39/thumbnail.jpg'
+  }
+]
+test>
