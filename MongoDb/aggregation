@@ -1,0 +1,175 @@
+ db.items.find()
+[
+  {
+    _id: ObjectId('663344c5709936696a46b79a'),
+    id: 59,
+    title: 'Spring and summershoes',
+    price: 20,
+    quantity: 3,
+    total: 60,
+    discountPercentage: 8.71,
+    discountPrice: 55,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/59/thumbnail.jpg'
+  },
+  {
+    _id: ObjectId('66334501709936696a46b79b'),
+    id: 88,
+    title: 'Tc reusable silicone magic washing gloves',
+    price: 29,
+    quantity: 3,
+    total: 58,
+    discountPercentage: 3.19,
+    discountPrice: 56,
+    thumbnail: 'https://cdn.dummyjson.com/product-images/88/thumbnail.jpg'
+  },
+  {
+    _id: ObjectId('66334522709936696a46b79c'),
+    id: 18,
+    title: 'Oil free moisturizer 100ml',
+    price: 40,
+    quantity: 2,
+    total: 80,
+    discountPercentage: 13.1,
+    discountPrice: 70,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/18/thumbnail.jpg'
+  },
+  {
+    _id: ObjectId('66334557709936696a46b79d'),
+    id: 95,
+    title: 'Wholesale cargo lashing belt',
+    price: 930,
+    quantity: 1,
+    total: 930,
+    discountPercentage: 17.67,
+    discountPrice: 766,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/95/thumbnail.jpg'
+  },
+  {
+    _id: ObjectId('66334570709936696a46b79e'),
+    id: 39,
+    title: 'Women sweaters wool',
+    price: 600,
+    quantity: 2,
+    total: 1200,
+    discountPercentage: 17.2,
+    discountPrice: 994,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/39/thumbnail.jpg'
+  }
+]
+test> db.items.aggregate([{$group:{_id:"$title"}}])
+[
+  { _id: 'Tc reusable silicone magic washing gloves' },
+  { _id: 'Spring and summershoes' },
+  { _id: 'Women sweaters wool' },
+  { _id: 'Oil free moisturizer 100ml' },
+  { _id: 'Wholesale cargo lashing belt' }
+]
+Please enter a MongoDB connection string (Default: mongodb://loctest> db.items.aggregate([{$project:{price:1,total:1}}])
+[
+  { _id: ObjectId('663344c5709936696a46b79a'), price: 20, total:
+ 60 },
+  { _id: ObjectId('66334501709936696a46b79b'), price: 29, total:
+ 58 },
+  { _id: ObjectId('66334522709936696a46b79c'), price: 40, total:
+ 80 },
+  { _id: ObjectId('66334557709936696a46b79d'), price: 930, total: 930 },
+  {
+    _id: ObjectId('66334570709936696a46b79e'),
+    price: 600,
+    total: 1200
+  }
+]
+test> db.items.aggregate([{$sort:{price:1}}])
+[
+  {
+    _id: ObjectId('663344c5709936696a46b79a'),
+    id: 59,
+    title: 'Spring and summershoes',
+    price: 20,
+    quantity: 3,
+    total: 60,
+    discountPercentage: 8.71,
+    discountPrice: 55,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/59/thumbnail.jpg'
+  },
+  {
+    _id: ObjectId('66334501709936696a46b79b'),
+    id: 88,
+    title: 'Tc reusable silicone magic washing gloves',
+    price: 29,
+    quantity: 3,
+    total: 58,
+    discountPercentage: 3.19,
+    discountPrice: 56,
+    thumbnail: 'https://cdn.dummyjson.com/product-images/88/thumbnail.jpg'
+  },
+  {
+    _id: ObjectId('66334522709936696a46b79c'),
+    id: 18,
+    title: 'Oil free moisturizer 100ml',
+    price: 40,
+    quantity: 2,
+    total: 80,
+    discountPercentage: 13.1,
+    discountPrice: 70,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/18/thumbnail.jpg'
+  },
+  {
+    _id: ObjectId('66334570709936696a46b79e'),
+    id: 39,
+    title: 'Women sweaters wool',
+    price: 600,
+    quantity: 2,
+    total: 1200,
+    discountPercentage: 17.2,
+    discountPrice: 994,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/39/thumbnail.jpg'
+  },
+  {
+    _id: ObjectId('66334557709936696a46b79d'),
+    id: 95,
+    title: 'Wholesale cargo lashing belt',
+    price: 930,
+    quantity: 1,
+    total: 930,
+    discountPercentage: 17.67,
+    discountPrice: 766,
+    thumbnail: 'https://cdn.dummyjson.com/product-image/95/thumbnail.jpg'
+  }
+]
+test> db.items.aggregate([{$match:{price:{$gt:100}}},{$group:{_id:$"total"}}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:61)
+
+> 1 | db.items.aggregate([{$match:{price:{$gt:100}}},{$group:{_id:$"total"}}])
+    |
+   ^
+  2 |
+
+test> db.items.aggregate([{$match:{price:{$gt:100}}},{$group:{_id:$"total"}}}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:61)
+
+> 1 | db.items.aggregate([{$match:{price:{$gt:100}}},{$group:{_id:$"total"}}}])
+    |
+   ^
+  2 |
+
+test> db.items.aggregate([{$match:{price:{$gt:100}}},{$group:{_id:$"total"}}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:61)
+
+> 1 | db.items.aggregate([{$match:{price:{$gt:100}}},{$group:{_id:$"total"}}])
+    |
+   ^
+  2 |
+
+test> db.items.aggregate([{$match:{price:{$gt:100}},{$group:{_id:$"total"}}])
+Uncaught:
+SyntaxError: Unexpected token (1:46)
+
+> 1 | db.items.aggregate([{$match:{price:{$gt:100}},{$group:{_id:$"total"}}])
+    |                                               ^
+  2 |
+test> db.items.aggregate([{$match:{price:{$gt:100}}},{$group:{_id:"$total"}}])
+[ { _id: 1200 }, { _id: 930 } ]
