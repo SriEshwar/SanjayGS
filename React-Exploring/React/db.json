@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": "7a1e",
+      "name": "Sanjay",
+      "email": "sanjudddd400@gmail.com",
+      "password": "Sanjay@2002",
+      "adhar": "123456789012"
+    },
+    {
+      "id": "b3fd",
+      "name": "Sanju",
+      "email": "sanjay.gs2020cse@sece.ac.in",
+      "password": "Sanju@2002",
+      "adhar": "098765432109"
+    }
+  ]
+}
