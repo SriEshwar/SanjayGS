@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record Form</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+input[type="submit"]:focus {
+    outline: none;
+}
+
+.error {
+    color: red;
+}
+
+    </style>
+</head>
+
+<body>
+    <h1>Record Form</h1>
+    <form action="/record" method="POST">
+        <label for="vehicleNumber">Vehicle Number:</label><br>
+        <input type="text" id="vehicleNumber" name="vehicleNumber" required><br><br>
+        
+        <label>Fuel Type:</label><br>
+        <input type="radio" id="petrol" name="fuel" value="Petrol" required>
+        <label for="petrol">Petrol</label><br>
+        <input type="radio" id="diesel" name="fuel" value="Diesel" required>
+        <label for="diesel">Diesel</label><br>
+        <input type="radio" id="gas" name="fuel" value="Gas" required>
+        <label for="gas">Gas</label><br><br>
+
+        <label for="date">Date:</label><br>
+        <input type="date" id="date" name="date" required><br><br>
+        
+        <label for="litres">Litres:</label><br>
+        <input type="number" id="litres" name="litres" required><br><br>
+        
+        <label for="rupees">Rupees:</label><br>
+        <input type="number" id="rupees" name="rupees" required><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+
+    <table id="records-table">
+        <thead>
+            <tr>
+                <th>Vehicle Number</th>
+                <th>Fuel Type</th>
+                <th>Date</th>
+                <th>Litres</th>
+                <th>Rupees</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Records will be populated dynamically here -->
+        </tbody>
+    </table>
+
+    <script>
+        // JavaScript code for handling edit and delete buttons
+        // Function to handle editing a record
+        function onEdit(td) {
+            selectRow = td.parentElement.parentElement;
+            document.getElementById("vehicleNumber").value = selectRow.cells[0].innerHTML;
+            // Determine the fuel type based on the cell value
+            var fuelType = selectRow.cells[1].innerHTML;
+            if (fuelType === "Petrol") {
+                document.getElementById("petrol").checked = true;
+            } else if (fuelType === "Diesel") {
+                document.getElementById("diesel").checked = true;
+            } else if (fuelType === "Gas") {
+                document.getElementById("gas").checked = true;
+            }
+            document.getElementById("date").value = selectRow.cells[2].innerHTML;
+            document.getElementById("litres").value = selectRow.cells[3].innerHTML;
+            document.getElementById("rupees").value = selectRow.cells[4].innerHTML;
+        }
+
+        // Function to update a record
+        function updateRecord() {
+            selectRow.cells[0].innerHTML = document.getElementById("vehicleNumber").value;
+            // Determine the fuel type based on the radio button selected
+            var fuelType;
+            if (document.getElementById("petrol").checked) {
+                fuelType = "Petrol";
+            } else if (document.getElementById("diesel").checked) {
+                fuelType = "Diesel";
+            } else if (document.getElementById("gas").checked) {
+                fuelType = "Gas";
+            }
+            selectRow.cells[1].innerHTML = fuelType;
+            selectRow.cells[2].innerHTML = document.getElementById("date").value;
+            selectRow.cells[3].innerHTML = document.getElementById("litres").value;
+            selectRow.cells[4].innerHTML = document.getElementById("rupees").value;
+        }
+
+        // Function to delete a record
+        function deleteRecord(td) {
+            if (confirm("Are you sure you want to delete this record?")) {
+                // Delete the entire row
+                row = td.parentElement.parentElement;
+                document.getElementById("records-table").deleteRow(row.rowIndex);
+                // Additional logic to delete from the database can be added here
+            }
+        }
+
+        // Fetch records and populate the table
+        fetch('/records')
+            .then(response => response.json())
+            .then(records => {
+                const tableBody = document.querySelector('#records-table tbody');
+                tableBody.innerHTML = '';
+                records.forEach(record => {
+                    const row = `
+                        <tr>
+                            <td>${record.vehicleNumber}</td>
+                            <td>${record.fuel}</td>
+                            <td>${record.date}</td>
+                            <td>${record.litres}</td>
+                            <td>${record.rupees}</td>
+                            <td>
+                                <button onclick="onEdit(this)">Edit</button>
+                                <button onclick="deleteRecord(this)">Delete</button>
+                            </td>
+                        </tr>
+                    `;
+                    tableBody.innerHTML += row;
+                });
+            });
+    </script>
+</body>
+</html>
