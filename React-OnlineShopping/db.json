@@ -1,0 +1,108 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Redmi Note 8",
+      "category": "Electronics",
+      "price": 12000,
+      "review": "Good product",
+      "offers": "10% off",
+      "image": "./image1.jpeg",
+      "deliveryDate":"08-07-2024",
+      "outOfStock ? 'Yes' : 'No'":"Yes"
+      
+          },
+    {
+      "id": "2",
+      "name": "Cooling Glass",
+      "category": "Fashion",
+      "price": 100,
+      "review": "Great quality",
+      "offers": "20% off",
+      "image": "./image2.jpeg",
+      "deliveryDate":"08-07-2024"
+    },
+    {
+      "id": "3",
+      "name": "Spoon",
+      "category": "Home & Kitchen",
+      "price": 199.99,
+      "review": "Excellent value",
+      "offers": "15% off",
+      "image": "./image3.jpg"
+    },
+    {
+      "id": "4",
+      "name": "Cricket Bat",
+      "category": "Sports",
+      "price": 149.99,
+      "review": "Top-notch performance",
+      "offers": "No offers",
+      "image": "./image4.jpeg"
+    },
+    {
+      "id": "5",
+      "name": "Meditation",
+      "category": "Books",
+      "price": 500,
+      "review": "Good product",
+      "offers": "No offers",
+      "image": "./image5.jpeg"
+    },
+    {
+      "id": "6",
+      "name": "Samsung Galaxy A05s",
+      "category": "Electronics",
+      "price": 15000,
+      "review": "Good product",
+      "offers": "10% off",
+      "image": "./image6.jpeg"
+    },
+    {
+      "id": "7",
+      "name": "Volley Ball",
+      "category": "Sports",
+      "price": 600,
+      "review": "Better Quality ",
+      "offers": "No offers",
+      "image": "./image7.jpeg"
+    },
+    {
+      "id": "8",
+      "name": "Rose powder",
+      "category": "Fashion",
+      "price": 200,
+      "review": "Great quality",
+      "offers": "20% off",
+      "image": "./image8.jpeg"
+    },
+    {
+      "id": "9",
+      "name": "Fridge",
+      "category": "Home & Kitchen",
+      "price": 25000,
+      "review": "Excellent Product",
+      "offers": "15% off",
+      "image": "./image9.jpeg"
+    },
+    {
+      "id": "10",
+      "name": "Key Board",
+      "category": "Electronics",
+      "price": 400,
+      "review": "Good product",
+      "offers": "5% off",
+      "image": "./image10.jpeg"
+    }
+  ],
+  "users": [
+    {
+      "id": "1719900350258",
+      "username": "Ram",
+      "email": "ram@gmail.com",
+      "password": "Ram@2002",
+      "phoneNumber": "9360618499"
+    }
+  ],
+  "cart":[]
+}

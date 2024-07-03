@@ -1,0 +1,33 @@
+.product-detail-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.product-detail {
+  text-align: center;
+}
+
+.product-image {
+  width: 200px;
+  height: 200px;
+}
+
+.add-to-cart-button,
+.buy-now-button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.add-to-cart-button {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.buy-now-button {
+  background-color: #f44336; /* Red */
+  color: white;
+}
