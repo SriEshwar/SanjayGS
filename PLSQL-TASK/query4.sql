@@ -1,0 +1,6 @@
+CREATE VIEW high_salary_employees AS
+SELECT EMP_ID, EMP_NAME, DEPARTMENT, SALARY
+FROM EMPLOYEES
+WHERE SALARY > 10000;
+
+SELECT * FROM high_salary_employees;
