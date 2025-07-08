@@ -1,0 +1,242 @@
+LEARNING TOPICS
+
+OOP (GPT) 
+DBMS - NORMALIZATION(GPT) 
+SQL  (sql revision Chatgpt)
+MONGO DB (Chatgpt)
+COLLECTIONS 
+JS(W3S) 
+NODE JS - EXPRESS(GPT) -> Want to workout execute mongoees to myself 
+TS(GPT) 
+ANGULAR 
+REACTJS (useReducer(local state) and concept in redux(global state) reducer are same only ) 
+AWS  
+GITHUB &- GITHUB ACTIONS -YAML(GPT) CI/CD
+SDLC ->(Javatpoint) - AGILE / SCRUM / JIRA(GPT) TDD vs BDD  vs DDD (Feasibility studies).
+DEVOPS AND TOOLS(GPT) 
+SRS DOCUMENTS
+Tailwind css(Official website) 
+Java Programming Language
+Docker 
+KUBERNETES
+Terraform 
+
+Test to Write the script by own
+Yaml
+Docker frontend and backend
+Docker compose file
+Kubernetes file
+
+Some Tools:
+1. pagespeed insights
+2. 
+
+VERSIONS AND ITS FEATURES => 05-05-2025(taken)
+
+HTML - 5 - aside tag is present
+CSS - 3 - Multiple new properties have been added like border-radius, shadow effects, opacity, box model, 2D/3D transformations.
+NODE - 22.15.0 - TLS (Transport Layer Security) protocols, ensuring more secure communication over networks.
+NPM - 11.3.0 - add node-gyp as actual config (@wraithgar)
+EXPRESS - 4.21.2 - HTTP helpers (redirection, caching, etc)
+MONGODB - 8.0 - Fast horizontal scaling for global high availability
+SQL - (Server 2022) - can now be integrated with S3-compatible object storage and Azure Storage. It allows you to store your data more cost-effectively and cost-effectively
+REACT - v19 - useActionState To make the common cases easier for Actions, we’ve added a new hook called useActionState.
+ANGULAR - v20(active) or v19 - Signal: it is new , efficient way to manage reactive state changes. Allowing standalone components, eliminating the need for NgModule declarations,and improved ssr.
+TS- 5.8.3 
+GIT - 2.49.0 - Large-object promisor protocol extension has been introduced.
+GITHUB - 3.16.2 - Packages have been updated to the latest security versions.
+EXCEL - 2024 - dynamic charts
+DOCKER - 28.1.1 - Fix a potential daemon crash when using docker load with archives containing zero-size tar headers. 
+KUBERNETES - 1.33 - 
+TAILWIND CSS [4.1] , POSTCSS [8.5.3], AUTOPRIFIXER [10.4.21].
+Vite - 6.3.5 - Instant Server Start,Lightning Fast HMR
+Java - Java 21 (JDK 21) - virtual threads, record patterns, pattern matching for switch, and enhanced collection.
+Terraform - 1.11.4 - force-unlock lockid commands. previous we use manully to delete.
+
+Use React Router with BrowserRouter, Route, and Link
+Use controlled components with useState.
+MongoDB sharding is a technique that distributes data across multiple servers (shards) to handle large datasets and high-throughput operations
+Prometheus is a monitoring system that collects and stores time series data, while Grafana is a visualization tool that allows users to create, explore, and share dashboards for monitoring and observability.
+
+Projects
+
+Github profile viewer - html css js
+crop suggestion - ANGULAR , Node js
+online shopping- ANGULAR db.json
+online shopping- React db.json'
+Foodie - MERN + Docker
+
+bcrypt is based on the Blowfish cipher and follows the EksBlowfish (Expensive Key Schedule Blowfish) algorithm for password hashing.
+MongoDB sharding is a technique for distributing data across multiple machines, also known as shards, to handle large datasets and high throughput operations
+
+
+ Start On 19/06/2025
+1. OOP 
+2. DBMS 
+3. SQL 
+4. MONGODB 
+5. COLLECTIONS 
+6. JS 
+7. Node JS / Express JS
+8. SDLC - phase,methods,agile,jira,scrum TDD vs BDD  vs DDD. '''''
+9. Github ACTIONS (Yaml) Ci/CD 
+10.Tailwind css 
+1.TS '''''
+2.ANGULAR '''''''
+3.React JS 
+
+1.Aws => All concept wise Known and also implemented [Ec2,VPC-cidr,s3,amplify,lambda,document db,IAM]
+2.Docker 
+3.KUBERNETES 
+4.Terraform 
+
+Build Stage (CodeBuild): Compile code and run tests     -CI
+Deploy Stage (CodePipeline): Deploy to staging/production    -CD
+REDUX:
+1️⃣ Store → Holds global state , are immutable.
+2️⃣ Actions → Describe what should change 
+3️⃣ Reducers → Update state based on actions , Take current state and update the based on action to store.
+4️⃣ Dispatch → Sends actions to reducers
+5️⃣ Selectors → Retrieve state
+6. Provider=store availabe all com. , connect= connect all function com.Map state to props which state are exposed as props, dispatch...
+7. In flex here only one reducer. many store accept. Using event emitter to know the store.dispatch is used notify in callback functions. 
+
+Enums - TS
+Enums are a way of defining named constants in TypeScript. They allow you to define a set of named values, which can be either numeric or string-based.
+
+In software development, "dev," "stage," and "prod" refer to distinct environments where software is built, tested, and eventually deployed to users: 
+Dev (Development):
+This is where developers write, test, and debug code. It's a safe space for experimentation and making changes without impacting users.
+Stage (Staging):
+A mirror of the production environment used for final testing before a release. It helps ensure everything functions as expected before going live.
+Prod (Production):
+The live environment where users interact with the software. Changes made here directly affect users, so it's crucial that everything is stable and working perfectly.
+
+TERRAFORM:
+A jump box server, also known as a jump server or jump host, is a virtual machine or network device that acts as an intermediary to access a remote network
+Alias is used to create two region in same file.
+Terraform has maintain only what are details in .tf file[called as absolute] , not even changed manully in aws console.
+Both [mutable and Immutable]-If we change tags level means called as minior change. But we change cidr block level means it can destory create new one.
+Meta arguments- count,for each , depends, provider, lifecycle.
+For- each = use case is when creating 3 more s3 buckets.
+for each set - toset method use is when create IAM users.
+Create before destory to change behaviour by use Lifestyle
+prevent destory is used to prevent the resource to action delete.
+igonore changes - means if user manully changes aws infra that reflets to .tf and state file by eg:[igonore=[tags,]]
+Implicit - order taken 
+Explicit - any order to create resource . But u overcome in this method means use "depends on = []".
+depends on is used to depend one resourse to another resource by main order.
+
+Variables to refer main.tf by "var" keyword . So purpose is we can change any time variables, hide some sensitive data and etc,,
+Prompted default values like if we forget to give "default" field it ask in the running time.
+terraform plan --var="ec2_instance_type=t2.micro". This also possible in cli
+high priority to change instance  - CLI vs env vs default vs input 
+Here another method is insteed of --var="ap-south-1" to create terraform.tfvars file there you can put "aws-region="ap-south-1"".
+If we use multiple tfvars file like prod,dev,stage so on that time we can separately run eg: terraform plan -var-file="dev.tfvars".
+If we run above file in automatic means we can use auto file structure  like dev.auto.tfvars . Run actuall command terraform plan.
+List is one of datatype  that you can give like this "type = list(string) { default = [t2.micro,t2.large]}"
+Same as map datatype
+If we use sensitive data which want not visible in state file means you can write in variables file sensitive = true.
+so u can give only sensitive data in cli commands.
+Output.tf is one file used show some output in cli like public_ip address and private. output.tf.
+"Locals" is used for to declare at top and resuse any where in the code in main.tf file. And connot be modify in cli. Only open file and modify.
+Interview Questions 
+1.terrform.tfvars vs auto.tfvars
+2.varaibles vs Locals
+"Data" variable is used read anything from console.
+data block can be used famously in ami_id field.
+Code reuseability = modules is vanthu resource ellam oru place vachu reuse pannikara mari.
+
+*Backend is used for store the state file in s3 bucket static storage because even if remove state file through cli means it can be stored in one place in the device.
+*based on this backend concept state file is "safe" because one user only use that state file for that create dynamo db = table to list the actions when done like that.When other user is creating resoure at same time it lock_id shows at error becomes state file locked. after some time wait and run yours file.
+*based on s3 bucket the bucket versioning we can state file changes ahh track pannalam.
+Interview Questions:
+if one user run terraform command run panna same time another use also run terraform command What will happen. Ans: To keep satte file remote and use lock_id. 
+Benifits: even my system collapsed means we can take the state file.
+Terraform state commands:
+terraform fmt -  align correct way in the main.tf file
+terraform validate - to find what errors in the file
+terraform show - is used to show details of state file which present in the remote.
+terraform refresh  - is if we change tag is infra manullay to terraform plan command to move state file and terraform refresh is used to move .tf file
+terraform state list - is used to show only what are resource used.
+terraform state show <name> - details of that resource.
+terraform force-unlock LockID -> if state file is locked due to some network issue we forcefully unlock.
+terraform taint - used to recreate resource.First destroy then recreate.
+terraform untaint
+terraform destory -target command - used delete one resource
+Workspace = branch like structure we can n number of workspaces.
+terraform Workspace show
+terraform Workspace list 
+terraform Workspace new  
+terraform Workspace select <workspace name>
+provisinor is used only under resource. File.Local,remote...
+
+
+ 5 6  -  + =  _
+
+
+ANGULAR v20:
+why standolone: Particular module given in one component eg: FormModule.RouterOutlet like that in Import field.
+data binding
+1. One way binding : String Interpolation {{}} (data to View)
+2. two way binding : [(ngModel)] (data to View) (view to data)
+String Interpolation not only variables it can also used in functions and etc..
+String Interpolation with Attribute binding 
+properity binding with safe navigation operator used in access property in objects. <h1 [innerText]>
+Event binding eg: (click,onMouseOver)
+Signal: it is new , efficient way to manage reactive state changes
+Why we need?
+1. Only affected components will updated
+2. no need for complex subscriptions like Rxjs
+3.Performance
+namma for example count = signal(0) declare pannalam
+Computed Signal na already create panna signal la base signal la vechu work pandrathu.
+Directives: add addition behavior of angular applicartion 
+1.Component Directives
+2. structural Directives : *ngFor , * ngIf, 
+3. Attribute Directives : [ngClass] directive in Angular allows you to dynamically add or remove CSS classes on HTML elements
+   [ngStyle] "{'color':'red'}" 
+custom directive ku command is ng g directive <directive name> Ethu vanthu spec.ts file and ts create pannum
+Pipes : Transform data into templates. Use this symbol | . pipes are date,uppercase,slice,currency
+Service: share data/logic between two components. Adv: to avoid @input and @output.
+Life cycle hooks : Init,changes,destroy
+Routing concept
+Wildcard
+Authgaurd
+Forms: Reactive Form la FormControl is single field and formgroup contains mutliple fields
+
+JS:
+A closure is a powerful concept in JavaScript where an inner function retains access to its outer function’s variables, even after the outer function has finished executing.
+(...) is shallow copy.
+
+React:
+UseRef is primarily used to access and manipulate the DOM or store mutable values without triggering re-renders. It provides a mutable reference that persists across component renders. On the other hand, useState is used for managing component state, triggering re-renders when the state updates.
+Rules of Hooks: useState must be called at the top level of your functional component and not inside loops, conditions, or nested functions.
+
+
+
+Task 17:
+1. React +React micro frontend
+2. Role play
+
+Task 18:
+1. React saga.
+2. React Considerations?
+3. Homophones
+
+
+Module federation dynamically load and share components even entire app during runtime.rxtfconfig.file
+weppack.json.js or ts
+use pnpm add cross env.
+suspense and fallback .
+fallback showws temp display.
+In react saga , pridiict and pre build . watcher saga and workker saga.. and middleware is sit inn dispatcch.
+
+
+
+
+
+
+
+
+
